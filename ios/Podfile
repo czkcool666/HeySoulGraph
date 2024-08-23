@@ -14,8 +14,16 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+# Add static frameworks and Firebase as static framework
+use_frameworks! :linkage => :static
+$RNFirebaseAsStaticFramework = true
+
+use_modular_headers!
+
 target 'HeySoulGraph' do
   config = use_native_modules!
+  pod 'Firebase/Analytics', :modular_headers => true
+  pod 'Firebase/Auth', :modular_headers => true
 
   use_react_native!(
     :path => config[:reactNativePath],
