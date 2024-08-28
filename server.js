@@ -8,10 +8,10 @@ const port = 3000;
 const openai = new OpenAI({
 
 
-  // unmark this apikey............................................
+//Provids your API key here ............................................
 
 
-  // apiKey: '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',
+  apiKey: '',
 
 
 
