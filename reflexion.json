@@ -1,0 +1,53 @@
+{
+  "name": "Reflective AI Agent",
+  "description": "An AI agent that uses a Large Language Model to engage in self-reflection and improvement with long-term and short-term memory",
+  "nodes": [
+    {
+      "id": "input",
+      "type": "input",
+      "label": "User Input",
+      "prompt": "Please provide your input for the agent."
+    },
+    {
+      "id": "llm",
+      "type": "process",
+      "label": "Large Language Model",
+      "prompt": "Analyze the user input and generate a response briefly.",
+      "next": "short-term-memory"
+    },
+    {
+      "id": "short-term-memory",
+      "type": "process",
+      "label": "Short-Term Memory",
+      "prompt": "Store the LLM output in short-term memory.",
+      "next": "reflection"
+    },
+    {
+      "id": "reflection",
+      "type": "process",
+      "label": "Self-Reflection",
+      "prompt": "Reflect on the LLM output and short-term memory to identify areas for improvement.",
+      "next": "long-term-memory"
+    },
+    {
+      "id": "long-term-memory",
+      "type": "process",
+      "label": "Long-Term Memory",
+      "prompt": "Store the reflection results in long-term memory.",
+      "next": "condition"
+    },
+    {
+      "id": "condition",
+      "type": "condition",
+      "label": "Improvement Condition",
+      "prompt": "Determine whether the agent's self-improvement has been significant enough to warrant a modified response.",
+      "next": ["input", "output"]
+    },
+    {
+      "id": "output",
+      "type": "output",
+      "label": "Agent Response",
+      "prompt": "Generate a response to the user, taking into account the agent's self-improvement."
+    }
+  ]
+}
