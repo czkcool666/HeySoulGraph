@@ -11,7 +11,6 @@ const openai = new OpenAI({
 //Provids your API key here ............................................
 
 
-  apiKey: '',
 
 
 
