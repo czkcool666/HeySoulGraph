@@ -6,7 +6,16 @@ const port = 3000;
 
 // Create an OpenAI instance with the API key
 const openai = new OpenAI({
-  apiKey: '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',
+
+
+  // unmark this apikey............................................
+
+
+  // apiKey: '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',
+
+
+
+
 });
 
 app.use(express.json());
